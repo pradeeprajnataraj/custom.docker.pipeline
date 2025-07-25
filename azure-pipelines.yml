@@ -8,13 +8,9 @@ variables:
   imageName: 'flask-static-app'
 
 steps:
-- task: DockerInstaller@0
-  inputs:
-    dockerVersion: 'latest'
-
 - task: Docker@2
   inputs:
-    containerRegistry: 'acr-Connection'
+    containerRegistry: 'acr-connection'
     repository: '$(imageName)'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
